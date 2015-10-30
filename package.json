@@ -1,0 +1,30 @@
+{
+  "name": "simpleui",
+  "description": "Simpleui is a small JS-library for handling UI.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/mpdroog/simpleui",
+  "bugs": {
+    "url": "https://github.com/mpdroog/simpleui/issues"
+  },
+  "license": "BSD-3-Clause",
+  "files": [
+    "fn.js",
+    "simpleui.js"
+  ],
+  "main": "simpleui.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mpdroog/simpleui.git"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "maintainers": [
+    {
+      "name": "MP",
+      "email": "pw.droog@quicknet.nl"
+    }
+  ],
+  "directories": {},
+  "readme": "ERROR: No README data found!"
+}
