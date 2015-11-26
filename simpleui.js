@@ -1,6 +1,7 @@
 'use strict';
 var Request = require('superagent');
-var Fn = require('./fn.jsx');
+var Fn = require('../../Fn.jsx');
+var Lang = require('../../lang/lang.js');
 
 window.onhashchange = function() {
 	// TODO: Something more awesome?
@@ -9,7 +10,7 @@ window.onhashchange = function() {
 
 module.exports = function() {
 	/* Login check */
-	Fn.loadMsg("Checking session");
+	Fn.loadMsg(Lang("loader.sesscheck"));
 	Request.get('/action/auth/state')
 	.set('Accept', 'application/json')
 	.end(function(err, res) {
@@ -18,7 +19,7 @@ module.exports = function() {
 				Fn.login();
 				return;
 			}
-			var msg = "Error checking session status.";
+			var msg = Lang("loader.error");
 			if (res.body && res.body.msg) {
 				msg = res.body.msg;
 			}
@@ -30,7 +31,7 @@ module.exports = function() {
 		try {
 			require('../../pages/' + page.substr(1) + '.jsx');
 		} catch (e) {
-			Fn.error(e.message);
+			Fn.error(typeof e === "object" ? e.message : e);
 		}
 	});
 };
